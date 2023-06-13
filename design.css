@@ -1,0 +1,282 @@
+html {
+    font-size: 70%;
+}
+body {
+    margin: 0;
+    font-family: 'poppins';
+}
+
+.wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/*Header and navigation*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    margin: 4em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    gap: 3.7em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+nav ul li a.active:before {
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 1px;
+    border-bottom: 3px solid rgb(27, 26, 26);
+    bottom: -5px;
+}
+
+nav ul li a:before {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 3px solid #b9b6b7;
+    bottom: -5px;
+    transition: width .3s;
+}
+nav ul li a:hover::before {
+    width: 35%;
+}
+
+/*Hero section*/
+
+main {
+    display: flex;
+    gap: 8em;
+    margin-top: 12em;
+    flex: 1 3;
+}
+
+.left {
+    width: 45%;
+}
+
+.right {
+    flex-grow: 1;
+}
+
+main h1 {
+    font-family: 'aerial';
+    font-weight: normal;
+    font-size: 5rem;
+    margin: 0;
+}
+.subhead {
+    font-size: 1.9rem;
+}
+
+.buttons {
+    margin: 1.5em 0;
+}
+
+.buttons,.secondary {
+    display: flex;
+    gap: 2em
+}
+
+.primary{
+    font-size: 1.5rem;
+    font-weight:bold;
+    text-decoration: none;
+    color: black;
+    border-radius: 1.3em;
+    background-color: rgb(250, 215, 171);
+    padding: 0.8em 1.5em;
+    margin: 1.5em;
+}
+
+.primary:hover {
+    background-color: pink;
+}
+
+.secondary {
+    font-size: 1.3rem;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.8em;
+    margin: 1em;
+}
+
+.secondary svg {
+    size:12px;
+    transition: transform .3s;
+}
+
+.secondary:hover svg {
+    transform: translateX(12px);
+}
+
+.offer {
+    display: flex;
+    border: 1px solid navy;
+    border-radius: 2em;
+    padding: 3em;
+    gap: 2.5em;
+    position: relative;
+}
+
+p.rate {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+p.details {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/*Right column gallery*/
+
+.right {
+    display: grid;
+    margin: 0;
+    gap: 2em;
+    grid-template-columns: repeat(2,auto);
+    grid-template-areas:
+    "left right"
+    "left bottom" ;
+}
+
+.card {
+    border-radius: 1.8em;
+    padding: 1.5em;
+    display: flex;
+    align-items:end;
+    background-size: 120%;
+    transition: background-size .3s;
+}
+
+.card:hover {
+    background-size: 140%;
+
+}
+
+.card1 {
+    grid-area: left;
+    background-image: url('fighter.webp');
+}
+
+.card3 {
+    grid-area: bottom;
+    background-image: url('allmicro.jpeg');
+    background-size: 100%;
+}
+
+.card2 {
+    grid-area: right;
+    background-image: url('glyfarm.jpeg');
+}
+
+.card-detail {
+    padding: 0.5em 1em;
+    background: white;
+    border-radius: 0.8em;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    transition: transform .3s;
+}
+
+.product-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  
+}
+
+.card-detail p {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+p.price {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.card:hover .card-detail {
+    transform: translateY(-20px);
+}
+
+.overlay {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: reveal 1s ease-in-out forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal {
+    from {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(0);
+    }
+}
+
+main {
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform:scale(.4);
+}
+
+@keyframes growIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+.logo h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+.logo p {
+    font-size: large;
+    margin: auto;
+    padding: 0.5em;
+}
+
+footer{
+	color: white;
+	background-color: black;
+	padding: 20px;
+	text-align: center;
+	
+}
+.margin {
+    margin-bottom: 10em;
+}
+
+.secondary:hover {
+    color: blueviolet;
+    padding: 1em;
+    text-underline-position: 20px;
+}
